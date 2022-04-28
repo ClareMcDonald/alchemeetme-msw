@@ -60,9 +60,9 @@ describe('App', () => {
     }
     
     server.use(
-      rest.get('https://uzgiamkrbapxufnwdrja.supabase.co/rest/v1/users', (req, res, cxt) => {
-        res(cxt.json([sasuke]));
-      })
+      rest.get('https://uzgiamkrbapxufnwdrja.supabase.co/rest/v1/users', (req, res, cxt) =>
+        res(cxt.json([sasuke]))
+      )
     )
     // 🚨 Use the server to change the response for this test
     
