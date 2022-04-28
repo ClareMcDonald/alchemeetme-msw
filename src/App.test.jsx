@@ -23,7 +23,7 @@ const user = {
 
 // 🚨 Create your server
 const server = setupServer(
-  rest.get('https://uzgiamkrbapxufnwdrja.supabase.co/rest/v1/users', (req, res, ctx) => res(ctx.json([user])))
+  rest.get(`${process.env.REACT_APP_SUPABASE_URL}/rest/v1/users`, (req, res, ctx) => res(ctx.json([user])))
 );
 
 describe('App', () => {
@@ -60,7 +60,7 @@ describe('App', () => {
     }
     
     server.use(
-      rest.get('https://uzgiamkrbapxufnwdrja.supabase.co/rest/v1/users', (req, res, cxt) =>
+      rest.get(`${process.env.REACT_APP_SUPABASE_URL}/rest/v1/users`, (req, res, cxt) =>
         res(cxt.json([sasuke]))
       )
     )
